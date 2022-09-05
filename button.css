@@ -1,0 +1,117 @@
+.butto {
+    text-decoration: none;
+    font-size: 25px;
+    color: #1fe8b6;
+    padding: 20px 50px;
+    border: 3px solid #1fe8b6;
+    position: relative;
+}
+
+.butto::before,
+.butto::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: inherit;
+    transition: all .5s;
+}
+
+.butto::before {
+    top: -15px;
+    left: -15px;
+    border-width: 3px 0 0 3px;
+}
+
+.butto::after {
+    bottom: -15px;
+    right: -15px;
+    border-width: 0 3px 3px 0;
+}
+
+.butto:hover::before,
+.butto:hover::after {
+    width: calc(100% + 27px);
+    height: calc(100% + 27px);
+}
+
+
+
+
+
+
+body {
+    background: linear-gradient(
+        to right, #833ab4,
+        #fd1d1d, #F4A460, #FF00FF,#FFDC33,#CED23A, #FF97BB,#FF4500, #fcb045);
+    background-size: 400% 400%;
+    animation: animate-background 60s infinite ease-in-out;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+
+
+
+
+
+
+.map {
+    height: 150px;
+    width: 600px;
+    position: absolute;
+    margin: 150px;
+    top: 0;
+    bottom: 0;
+    left: 20%;
+    right: 0;
+    box-shadow: 0 50px 35px rgba(0,0, 0,0.3);
+    border-radius: 30px;
+    overflow: hidden;
+    background: #1c1b29;
+}
+
+.map::before {
+    content: "";
+    background-image: conic-gradient(
+            orangered 60deg,
+            transparent 100deg
+        );
+        height: 500%;
+        width: 150%;
+        position: absolute;
+        left: -25%;
+        top: -200%;
+        animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.map::after {
+    content: "PORTFOLIO";
+    height: 94%;
+    width: 94%;
+    position: absolute;
+    background-color: #1c1b29;
+    border-radius: 30px;
+    top: 3%;
+    left: 3%;
+    color: orangered;
+    display: grid;
+    place-items: center;
+    font-size: 50px;
+    letter-spacing: 4px;
+}
